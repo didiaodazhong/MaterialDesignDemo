@@ -9,17 +9,21 @@ import android.widget.Toast;
 
 import com.peixing.materialdesigndemo.R;
 import com.peixing.materialdesigndemo.view.BannerRotate;
+import com.peixing.materialdesigndemo.view.MiClockView;
 
 public class BannerActivity extends Activity {
 
     private SwipeRefreshLayout swipeContent;
     private RecyclerView recyclerContent;
     private BannerRotate banner;
-
+    private MiClockView clock;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner);
+
+
+        clock = (MiClockView) findViewById(R.id.clock);
 
         banner = (BannerRotate) findViewById(R.id.banner);
 //        swipeContent = (SwipeRefreshLayout) findViewById(R.id.swipe_content);

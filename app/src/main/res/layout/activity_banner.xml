@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_banner"
     android:layout_width="match_parent"
@@ -12,14 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="200dip"></com.peixing.materialdesigndemo.view.BannerRotate>
 
-   <!-- <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!-- <android.support.v4.widget.SwipeRefreshLayout
+         android:id="@+id/swipe_content"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>-->
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/recycler_content"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+     </android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <com.peixing.materialdesigndemo.view.MiClockView
+        android:layout_marginTop="10dip"
+        android:id="@+id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:backgroundColor="#237EAD"
+        app:darkColor="#80ffffff"
+        app:lightColor="#ffffff"
+        app:textSize="16sp" />
 </LinearLayout>

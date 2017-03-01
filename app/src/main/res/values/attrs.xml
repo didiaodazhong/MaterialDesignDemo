@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleView">
+
+        <attr name="circleBg" format="color" />
+        <attr name="arcColor" format="color" />
+        <attr name="arcWidth" format="dimension" />
+        <attr name="percentTextColor" format="color" />
+        <attr name="percentTextSize" format="dimension" />
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MiClockView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="lightColor" format="color" />
+        <attr name="darkColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+</resources>
