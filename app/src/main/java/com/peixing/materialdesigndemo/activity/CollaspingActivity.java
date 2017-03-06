@@ -6,6 +6,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -34,10 +35,7 @@ public class CollaspingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collasping);
-
-
         ivBenz = (ImageView) findViewById(R.id.iv_benz);
-
         activityCollasping = (CoordinatorLayout) findViewById(R.id.activity_collasping);
         appBar = (AppBarLayout) findViewById(R.id.app_bar);
         collapsingtoolbarlayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingtoolbarlayout);
@@ -45,6 +43,12 @@ public class CollaspingActivity extends AppCompatActivity {
         fab = (FloatingActionButton) findViewById(R.id.fab);
         nestedScrollview = (NestedScrollView) findViewById(R.id.nested_scrollview);
         tvWord = (TextView) findViewById(R.id.tv_word);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
         //自定义文字选中状态选项
         tvWord.setCustomSelectionActionModeCallback(new MyCallBack());
 
@@ -55,12 +59,18 @@ public class CollaspingActivity extends AppCompatActivity {
                 if (toolbar.getVisibility() == View.VISIBLE) {
                     appBar.setExpanded(false);
                 }
-              /*  else {
-//                    if (toolbar.getVisibility() == View.INVISIBLE)
-                    appBar.setExpanded(true);
-                }*/
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class MyCallBack implements ActionMode.Callback {

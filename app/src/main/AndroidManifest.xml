@@ -36,7 +36,7 @@
         <activity android:name=".activity.BaseActivity" />
         <activity
             android:name=".activity.CollaspingActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/CollaspTheme"></activity>
 
         <activity android:name=".activity.VrPhotoActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
