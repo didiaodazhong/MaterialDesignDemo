@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.peixing.materialdesigndemo.R;
 
-public class CollaspingActivity extends AppCompatActivity {
+public class CollaspingActivity extends BaseActivity {
 
     private static final String TAG = "CollaspingActivity";
     private CoordinatorLayout activityCollasping;
