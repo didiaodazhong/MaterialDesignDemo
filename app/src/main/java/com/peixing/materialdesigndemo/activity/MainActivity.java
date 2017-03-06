@@ -2,6 +2,7 @@ package com.peixing.materialdesigndemo.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,6 +14,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,6 +58,7 @@ public class MainActivity extends BaseActivity
         initViewGroup();
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
+        //android6.0动态申请权限
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,7 +141,7 @@ public class MainActivity extends BaseActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer =  (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -164,14 +167,24 @@ public class MainActivity extends BaseActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Snackbar.make(fab, "设置选项", Snackbar.LENGTH_SHORT).show();
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Snackbar.make(fab, "设置选项", Snackbar.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_more:
+                Snackbar.make(fab, "更多选项", Snackbar.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_night:
+                if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO) {
+                    getDelegate().setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }else {
+                    getDelegate().setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+                // 调用 recreate() 使设置生效
+                recreate();
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

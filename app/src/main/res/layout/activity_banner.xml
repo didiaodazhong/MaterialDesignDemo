@@ -8,7 +8,14 @@
     android:orientation="vertical"
     tools:context="com.peixing.materialdesigndemo.activity.BannerActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:background="?attr/colorPrimary"
+        android:id="@+id/toolbar_banner"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
     <com.peixing.materialdesigndemo.view.BannerRotate
+        android:layout_marginTop="8dip"
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="200dip"></com.peixing.materialdesigndemo.view.BannerRotate>
@@ -25,11 +32,11 @@
      </android.support.v4.widget.SwipeRefreshLayout>-->
 
     <com.peixing.materialdesigndemo.view.MiClockView
-        android:layout_marginTop="10dip"
         android:id="@+id/clock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginTop="10dip"
         app:backgroundColor="#237EAD"
         app:darkColor="#80ffffff"
         app:lightColor="#ffffff"

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.peixing.recyclerviewdemo.fragment.LinearLayoutFragment">
+    tools:context="com.peixing.materialdesigndemo.activity.MainActivity">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,6 +16,6 @@
             android:id="@+id/linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#dddddd"></android.support.v7.widget.RecyclerView>
+            android:background="@color/foreground_material_light_1"></android.support.v7.widget.RecyclerView>
     </android.support.v4.widget.SwipeRefreshLayout>
 </FrameLayout>

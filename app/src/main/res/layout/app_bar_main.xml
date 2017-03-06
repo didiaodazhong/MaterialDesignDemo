@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.peixing.materialdesigndemo.activity.MainActivity">
     <!-- android:fitsSystemWindows="true"-->
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -26,7 +26,8 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0dc3b0"
+            android:background="@color/colorPrimary"
+            android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:tabGravity="fill"
             app:tabIndicatorColor="#60a8ef"
