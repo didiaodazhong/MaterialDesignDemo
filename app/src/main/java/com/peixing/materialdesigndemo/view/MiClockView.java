@@ -21,6 +21,7 @@ import com.peixing.materialdesigndemo.R;
 import com.peixing.materialdesigndemo.utils.DensityUtils;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 
 /**
@@ -352,14 +353,14 @@ public class MiClockView extends View {
      * 为了不让秒针走得像老式挂钟一样僵硬，需要精确到毫秒
      */
     private void getTimeDegree() {
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(Locale.CHINA);
         float milliSecond = calendar.get(Calendar.MILLISECOND);
 
 //        Log.i(TAG, "getTimeDegree: " + calendar.get(Calendar.HOUR) + "==" + calendar.getTime());
         float second = calendar.get(Calendar.SECOND) + milliSecond / 1000;
         float minute = calendar.get(Calendar.MINUTE) + second / 60;
         //  修改时区
-        float hour = calendar.get(Calendar.HOUR) + 8 + minute / 60;
+        float hour = calendar.get(Calendar.HOUR)  + minute / 60;
         mSecondDegree = second / 60 * 360;
         mMinuteDegree = minute / 60 * 360;
         mHourDegree = hour / 12 * 360;

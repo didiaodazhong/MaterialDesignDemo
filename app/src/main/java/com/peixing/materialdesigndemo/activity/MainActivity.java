@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.peixing.materialdesigndemo.Feagment.AppInfoFragment;
 import com.peixing.materialdesigndemo.Feagment.GridLayoutFragment;
 import com.peixing.materialdesigndemo.Feagment.LinearLayoutFragment;
 import com.peixing.materialdesigndemo.Feagment.PhotoFragment;
@@ -40,7 +41,7 @@ public class MainActivity extends BaseActivity
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
-    private String[] titles = new String[]{"一", "二", "三", "四", "五"};
+    private String[] titles = new String[]{"一", "二", "三", "四", "五", "六"};
     private Toolbar toolbar;
     //, "五","六","七","八","九","十"
 
@@ -119,10 +120,11 @@ public class MainActivity extends BaseActivity
                     return new StaggeredGridLayoutFragment();
                 } else if (position == 3) {
                     return new PhotoFragment();
-                } else {
+                } else if (position == 4) {
                     return new VideoFragment();
+                } else {
+                    return new AppInfoFragment();
                 }
-
             }
 
             @Override
@@ -178,7 +180,7 @@ public class MainActivity extends BaseActivity
             case R.id.action_night:
                 if ((getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO) {
                     getDelegate().setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }else {
+                } else {
                     getDelegate().setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
                 // 调用 recreate() 使设置生效
