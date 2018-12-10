@@ -12,7 +12,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:fitsSystemWindows="true">
         <!--折叠效果-->
         <!--contentScrim 内容遮罩-->
@@ -28,7 +28,7 @@
             <ImageView
                 android:id="@+id/iv_benz"
                 android:layout_width="match_parent"
-                android:layout_height="200dip"
+                android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/a020"
